@@ -4,6 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// Default import ชื่ออะไรก็ได้
+import abcd from './import-export/sayHi';
+
+// Name import ชื่อต้องตรงกับที่ export ออกมา
+import { sayHello, month as mth } from './import-export/sayHi';
+
+import * as obj from './import-export/sayHi';
+
+abcd();
+sayHello();
+console.log(mth);
+console.log(obj.day, obj.year);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
