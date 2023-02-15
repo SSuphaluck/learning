@@ -53,7 +53,7 @@ function App() {
           <input
             type="checkbox"
             name="phoneBrand"
-            value="Samsung"
+            value="Samsung Hero"
             onChange={handleCheckboxChange}
           />
           Samsung Hero
@@ -63,7 +63,7 @@ function App() {
           <input
             type="checkbox"
             name="phoneBrand"
-            value="Xiaomi"
+            value="Nokia 3310"
             onChange={handleCheckboxChange}
           />
           Nokia 3310
