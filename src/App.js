@@ -3,18 +3,10 @@ import './App.css';
 
 function App() {
   const handleCheckboxChange = (event) => {
-    const checked = () => (event.target.checked === true ? 'tick' : 'untick');
-    console.log('Name: ', event.target.name);
-    console.log('Value: ', event.target.value);
-    console.log('Checked: ', checked());
-  };
-
-  const handleClickLink = (event) => {
-    const confirmation = window.confirm('Leave for https://google.com?');
-    if (!confirmation) {
-      event.preventDefault();
-      return false;
-    }
+    const { name, value, checked } = event.target;
+    console.log('Name: ', name);
+    console.log('Value: ', value);
+    console.log('Checked: ', checked ? 'tick' : 'untick');
   };
 
   return (
@@ -71,9 +63,18 @@ function App() {
       </div>
       <hr />
       <h1>Lab 4</h1>
-      <button onClick={handleClickLink}>
-        <a href="https://google.com">Google</a>
-      </button>
+      <a
+        href="https://google.com"
+        onClick={(event) => {
+          event.preventDefault();
+          if (window.confirm('Leave for https://google.com?')) {
+            window.location.href = 'https://google.com';
+            // window.location.assign('https://google.com');
+          }
+        }}
+      >
+        Google
+      </a>
       <hr />
     </div>
   );
